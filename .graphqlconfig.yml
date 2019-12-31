@@ -1,0 +1,12 @@
+projects:
+  emberamplify:
+    schemaPath: app/graphql/schema.json
+    includes:
+      - app/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: app/graphql

@@ -1,5 +1,31 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+
+<div class="app">
+  <div class="app-header">
+      <div class="app-logo">
+          <img src="https://aws-amplify.github.io/images/Logos/Amplify-Logo-White.svg" alt="AWS Amplify" />
+      </div>
+      <h1>Welcome to the Amplify Framework</h1>
+  </div>
+  <div class="app-body">
+      <form>
+        <label>
+          Name: <Input @value={{this.todoName}} />
+        </label>
+        <label>
+          Description: <Input @value={{this.todoDescription}} />
+        </label>
+        <br>
+        <button type="submit" id="MutationEventButton" {{on "click" this.addTodo}}>Add data</button>
+      </form>
+      <div id="MutationResult">
+        {{#each this.todos as |todo|}}
+          <p>{{todo.name}} - {{todo.description}}</p>
+        {{else}}
+          <p>Nothing to do!</p>
+        {{/each}}
+      </div>
+      <div id="QueryResult"></div>
+      <div id="SubscriptionResult"></div>
+  </div>
+</div>
